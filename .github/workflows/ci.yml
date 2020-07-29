@@ -11,6 +11,10 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: docker://turtlecoincore/ci:crypto-x64-linux
+      options: --entrypoint /bin/bash
     steps:
+      - name: Clone
+        uses: actions/checkout@v2
+        
       - name: Run Test
         run: uname -a
