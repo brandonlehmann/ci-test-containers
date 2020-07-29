@@ -32,3 +32,16 @@ jobs:
       - name: Run Test
         run: |
           file /bin/bash
+
+  example3:
+    runs-on: ubuntu-latest
+    container:
+      image: docker://turtlecoincore/ci:crypto-arm64v8-linux
+      options: --entrypoint /bin/bash
+    steps:
+      - name: Clone
+        uses: actions/checkout@v2
+
+      - name: Run Test
+        run: |
+          file /bin/bash
