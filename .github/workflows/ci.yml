@@ -9,6 +9,7 @@ on:
 jobs:
   example1:
     runs-on: ubuntu-latest
+    continue-on-error: true
     container:
       image: docker://turtlecoincore/ci:crypto-x64-linux
       options: --entrypoint /bin/bash
@@ -22,6 +23,7 @@ jobs:
 
   example2:
     runs-on: ubuntu-latest
+    continue-on-error: true
     container:
       image: docker://turtlecoincore/ci:crypto-ia32-linux
       options: --entrypoint /bin/bash
@@ -35,6 +37,7 @@ jobs:
 
   example3:
     runs-on: ubuntu-latest
+    continue-on-error: true
     container:
       image: docker://turtlecoincore/ci:crypto-arm64v8-linux
       options: --entrypoint /bin/bash
