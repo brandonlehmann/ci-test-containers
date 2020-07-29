@@ -12,6 +12,5 @@ jobs:
     container:
       image: docker://turtlecoincore/ci:crypto-x64-linux
     steps:
-      - uses: actions/checkout@v1
       - name: Run Test
         run: uname -a
