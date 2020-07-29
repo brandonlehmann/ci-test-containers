@@ -12,7 +12,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Run test
-        uses: turtlecoincore/ci:crypto-ia32-linux
+        uses: docker://turtlecoincore/ci:crypto-ia32-linux
         with:
           entrypoint: /bin/bash
           args: -c uname -a
