@@ -7,7 +7,7 @@ on:
     types: [published]
 
 jobs:
-  example2:
+  example1:
     runs-on: ubuntu-latest
     container:
       image: docker://turtlecoincore/ci:crypto-x64-linux
@@ -15,7 +15,20 @@ jobs:
     steps:
       - name: Clone
         uses: actions/checkout@v2
-        
+
+      - name: Run Test
+        run: |
+          file /bin/bash
+
+  example2:
+    runs-on: ubuntu-latest
+    container:
+      image: docker://turtlecoincore/ci:crypto-ia32-linux
+      options: --entrypoint /bin/bash
+    steps:
+      - name: Clone
+        uses: actions/checkout@v2
+
       - name: Run Test
         run: |
           file /bin/bash
