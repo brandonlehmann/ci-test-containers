@@ -16,3 +16,12 @@ jobs:
         with:
           entrypoint: /bin/bash
           args: -c uname -a
+
+  example2:
+    runs-on: ubuntu-latest
+    container:
+      image: docker://turtlecoincore/ci:crypto-ia32-linux
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run Test
+        run: uname -a
